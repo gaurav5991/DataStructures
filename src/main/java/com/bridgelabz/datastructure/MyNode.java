@@ -1,7 +1,9 @@
 package com.bridgelabz.datastructure;
 
-public class MyNode<K> {
-    private  MyNode next;
+import java.security.Key;
+
+public class MyNode<K> implements INode<K> {
+    private  INode next;
     private  K key;
 
     public MyNode(K key) {
@@ -9,16 +11,28 @@ public class MyNode<K> {
         this.next = null;
     }
 
-    public boolean printWelcomeMessage() {
-        System.out.println("Welcome To Linear Data Structure!!!");
-        return true;
-    }
-
-    public MyNode getNext() {
+    @Override
+    public INode getNext() {
         return next;
     }
 
-    public void setNext(MyNode next) {
+    @Override
+    public void setNext(INode next) {
         this.next = next;
+    }
+
+    @Override
+    public K getKey() {
+        return key;
+    }
+
+    @Override
+    public void setKey(K key) {
+        this.key = key;
+    }
+
+    public boolean printWelcomeMessage() {
+        System.out.println("Welcome To Linear Data Structure!!!");
+        return true;
     }
 }
