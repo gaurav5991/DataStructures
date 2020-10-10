@@ -1,7 +1,5 @@
 package com.bridgelabz.datastructure;
 
-import java.security.Key;
-
 public class MyNode<K> implements INode<K> {
     private  INode next;
     private  K key;
