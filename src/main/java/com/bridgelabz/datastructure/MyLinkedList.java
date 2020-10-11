@@ -46,7 +46,11 @@ public class MyLinkedList<K> {
                 tail = tail.getNext();
             }
             tail.setNext(newNode);
-            this.tail = null;
+            this.tail = newNode;
         }
+    }
+    public void insert(INode<K> prevNode,INode<K> newNode){
+       newNode.setNext(prevNode.getNext());
+       prevNode.setNext(newNode);
     }
 }
