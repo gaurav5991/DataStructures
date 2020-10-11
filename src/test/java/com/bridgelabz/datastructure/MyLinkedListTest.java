@@ -75,4 +75,17 @@ public class MyLinkedListTest {
         INode deletedNode = myLinkedList.popLast();
         Assert.assertEquals(deletedNode,myThirdNode);
     }
+    /*TestCase for Searching Node with given Key in LinkedList*/
+    @Test
+    public void searchGivenElementInLinkedListIfFoundShouldReturnTrue() {
+        MyNode<Integer> myFirstNode = new MyNode<Integer>(56);
+        MyNode<Integer> mySecondNode = new MyNode<Integer>(30);
+        MyNode<Integer> myThirdNode = new MyNode<Integer>(70);
+        MyLinkedList<Integer> myLinkedList = new MyLinkedList<>();
+        myLinkedList.append(myFirstNode);
+        myLinkedList.append(mySecondNode);
+        myLinkedList.append(myThirdNode);
+        INode node = myLinkedList.searchElement(30);
+        Assert.assertEquals(node,mySecondNode);
+    }
 }
