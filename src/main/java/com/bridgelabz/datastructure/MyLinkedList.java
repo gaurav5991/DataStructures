@@ -63,27 +63,29 @@ public class MyLinkedList<K> {
 
     /*Pop First Node in Linked List*/
     public INode popFirst() {
-       INode tempNode = this.head;
-       this.head = head.getNext();
-       return  tempNode;
+        INode tempNode = this.head;
+        this.head = head.getNext();
+        return tempNode;
     }
+
     /*Pop Last Node in Linked List*/
     public INode popLast() {
-        INode prevNode =null;
+        INode prevNode = null;
         INode tempNode = this.head;
-        while (tempNode.getNext()!=null){
+        while (tempNode.getNext() != null) {
             prevNode = tempNode;
             tempNode = tempNode.getNext();
         }
         prevNode.setNext(null);
         return tempNode;
     }
+
     /*Search element in linked list with given value*/
-    public INode searchElement(K key){
+    public INode searchElement(K key) {
         INode tempNode = head;
-        while (tempNode.getNext()!=null && tempNode!=null){
-            if(tempNode.getKey().equals(key)){
-               return tempNode;
+        while (tempNode.getNext() != null) {
+            if (tempNode.getKey().equals(key)) {
+                return tempNode;
             }
             tempNode = tempNode.getNext();
         }
