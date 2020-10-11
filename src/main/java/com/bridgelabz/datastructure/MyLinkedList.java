@@ -61,10 +61,21 @@ public class MyLinkedList<K> {
         prevNode.setNext(newNode);
     }
 
-    /*Pop Node in Linked List*/
-    public INode popElement() {
+    /*Pop First Node in Linked List*/
+    public INode popFirst() {
        INode tempNode = this.head;
        this.head = head.getNext();
        return  tempNode;
+    }
+    /*Pop Last Node in Linked List*/
+    public INode popLast() {
+        INode prevNode =null;
+        INode tempNode = this.head;
+        while (tempNode.getNext()!=null){
+            prevNode = tempNode;
+            tempNode = tempNode.getNext();
+        }
+        prevNode.setNext(null);
+        return tempNode;
     }
 }

@@ -59,7 +59,20 @@ public class MyLinkedListTest {
         myLinkedList.append(myFirstNode);
         myLinkedList.append(mySecondNode);
         myLinkedList.append(myThirdNode);
-        INode deletedNode = myLinkedList.popElement();
+        INode deletedNode = myLinkedList.popFirst();
         Assert.assertEquals(deletedNode,myFirstNode);
+    }
+    /*TestCase for Deleting Tail Node in LinkedList*/
+    @Test
+    public void givenLastElementWhenDeletedShouldPassLinkedListResult() {
+        MyNode<Integer> myFirstNode = new MyNode<Integer>(56);
+        MyNode<Integer> mySecondNode = new MyNode<Integer>(30);
+        MyNode<Integer> myThirdNode = new MyNode<Integer>(70);
+        MyLinkedList<Integer> myLinkedList = new MyLinkedList<>();
+        myLinkedList.append(myFirstNode);
+        myLinkedList.append(mySecondNode);
+        myLinkedList.append(myThirdNode);
+        INode deletedNode = myLinkedList.popLast();
+        Assert.assertEquals(deletedNode,myThirdNode);
     }
 }
