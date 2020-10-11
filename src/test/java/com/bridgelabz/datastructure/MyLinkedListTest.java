@@ -143,4 +143,22 @@ public class MyLinkedListTest {
         int size = myLinkedList.size();
         Assert.assertEquals(3,size);
     }
+    /*TestCase for Element Added in  Sorted Linked List*/
+    @Test
+    public void givenThreeNumbersWhenAddedToSortedLinkedListShouldBeAddedToTop() {
+        MyNode<Integer> myFirstNode = new MyNode<Integer>(56);
+        MyNode<Integer> mySecondNode = new MyNode<Integer>(30);
+        MyNode<Integer> myThirdNode = new MyNode<Integer>(70);
+        MyNode<Integer> myFourthNode = new MyNode<Integer>(40);
+        MyLinkedList<Integer> myLinkedList = new MyLinkedList<>();
+        myLinkedList.addElementInSortedList(myFirstNode);
+        myLinkedList.addElementInSortedList(mySecondNode);
+        myLinkedList.addElementInSortedList(myThirdNode);
+        myLinkedList.addElementInSortedList(myFourthNode);
+        boolean result = myLinkedList.getHead().equals(mySecondNode) &&
+                myLinkedList.getHead().getNext().equals(myFourthNode) &&
+                myLinkedList.getHead().getNext().getNext().equals(myFirstNode) &&
+                myLinkedList.getTail().equals(myThirdNode);
+        Assert.assertTrue(result);
+    }
 }
