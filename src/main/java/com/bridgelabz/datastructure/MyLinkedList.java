@@ -137,5 +137,13 @@ public class MyLinkedList<K extends Comparable<K>> {
             tempNode = tempNode.getNext();
         }
     }
-
+    /*Print Nodes of Linked List*/
+    public void printNodes() {
+        INode tempNode = this.head;
+        while(tempNode!=null){
+            System.out.print(tempNode.getKey()+" ");
+            tempNode = tempNode.getNext();
+        }
+        System.out.println();
+    }
 }
