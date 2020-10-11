@@ -8,19 +8,24 @@ public class MyQueue<K> {
         this.MyLinkedList = new MyLinkedList();
     }
 
-    /*Push Node in Queue*/
+    /*Enqueue Node in Queue*/
     public void enqueue(INode<K> newNode) {
         MyLinkedList.append(newNode);
     }
 
-    /*Peek Element From Stack*/
+    /*Peek Element From Queue*/
     public INode<K> peek() {
         return MyLinkedList.getHead();
     }
 
-    /*Print Stack*/
+    /*Print Queue*/
     public void printQueue() {
         MyLinkedList.printNodes();
+    }
+
+    /*Dequeue Element From Queue*/
+    public INode<K> Dequeue() {
+        return MyLinkedList.popFirst();
     }
 
 }
