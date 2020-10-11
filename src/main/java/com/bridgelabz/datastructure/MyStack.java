@@ -23,4 +23,9 @@ public class MyStack<K extends Comparable<K>> {
     public void printStack() {
         MyLinkedList.printNodes();
     }
+
+    /*Pop Element From Stack*/
+    public INode<K> pop() {
+        return MyLinkedList.popFirst();
+    }
 }
