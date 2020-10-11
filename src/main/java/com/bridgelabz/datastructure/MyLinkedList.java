@@ -1,5 +1,8 @@
 package com.bridgelabz.datastructure;
 
+import java.util.LinkedList;
+import java.util.List;
+
 public class MyLinkedList<K> {
     private INode head;
     private INode tail;
@@ -9,7 +12,6 @@ public class MyLinkedList<K> {
         this.head = null;
         this.tail = null;
     }
-
     /*Getter And Setter Methods*/
     public INode getHead() {
         return head;
@@ -90,5 +92,29 @@ public class MyLinkedList<K> {
             tempNode = tempNode.getNext();
         }
         return tempNode;
+    }
+    /*Delete Specified Element From Linked List After given Element*/
+    public INode popElement(K key) {
+        INode prevNode = null;
+        INode tempNode = head;
+        while (tempNode.getNext()!=null){
+            if(tempNode.getKey().equals(key)){
+                prevNode.setNext(tempNode.getNext());
+                return tempNode;
+            }
+            prevNode = tempNode;
+            tempNode = tempNode.getNext();
+        }
+        return tempNode;
+    }
+    /*Calculate size of Linked List*/
+    public int size(){
+       int size = 0;
+       INode tempNode = head;
+       while (tempNode!=null){
+           size++;
+           tempNode = tempNode.getNext();
+       }
+       return size;
     }
 }

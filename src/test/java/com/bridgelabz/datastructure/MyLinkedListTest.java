@@ -63,7 +63,7 @@ public class MyLinkedListTest {
         myLinkedList.append(mySecondNode);
         myLinkedList.append(myThirdNode);
         INode deletedNode = myLinkedList.popFirst();
-        Assert.assertEquals(deletedNode, myFirstNode);
+        Assert.assertEquals(myFirstNode, deletedNode);
     }
 
     /*TestCase for Deleting Tail Node in LinkedList*/
@@ -77,7 +77,7 @@ public class MyLinkedListTest {
         myLinkedList.append(mySecondNode);
         myLinkedList.append(myThirdNode);
         INode deletedNode = myLinkedList.popLast();
-        Assert.assertEquals(deletedNode, myThirdNode);
+        Assert.assertEquals(myThirdNode, deletedNode);
     }
 
     /*TestCase for Searching Node with given Key in LinkedList*/
@@ -91,7 +91,7 @@ public class MyLinkedListTest {
         myLinkedList.append(mySecondNode);
         myLinkedList.append(myThirdNode);
         INode node = myLinkedList.searchElement(30);
-        Assert.assertEquals(node, mySecondNode);
+        Assert.assertEquals(mySecondNode,node);
     }
 
     /*TestCase for Inserting Element After Given Node in Linked List*/
@@ -111,5 +111,36 @@ public class MyLinkedListTest {
                 myLinkedList.getHead().getNext().getNext().equals(myThirdNode) &&
                 myLinkedList.getTail().equals(myFourthNode);
         Assert.assertTrue(result);
+    }
+    /*TestCase for Deleting Specified Node in LinkedList*/
+    @Test
+    public void givenElementWhenDeletedShouldPassLinkedListResult() {
+        MyNode<Integer> myFirstNode = new MyNode<Integer>(56);
+        MyNode<Integer> mySecondNode = new MyNode<Integer>(30);
+        MyNode<Integer> myThirdNode = new MyNode<Integer>(40);
+        MyNode<Integer> myFourthNode = new MyNode<>(70);
+        MyLinkedList<Integer> myLinkedList = new MyLinkedList<>();
+        myLinkedList.append(myFirstNode);
+        myLinkedList.append(mySecondNode);
+        myLinkedList.append(myThirdNode);
+        myLinkedList.append(myFourthNode);
+        INode deletedNode = myLinkedList.popElement(40);
+        Assert.assertEquals(myThirdNode,deletedNode);
+    }
+    /*TestCase for Calculating size of Linked List After Deleting A Node*/
+    @Test
+    public void givenElementWhenDeletedShouldReduceSizeByOneShouldPassLinkedListResult() {
+        MyNode<Integer> myFirstNode = new MyNode<Integer>(56);
+        MyNode<Integer> mySecondNode = new MyNode<Integer>(30);
+        MyNode<Integer> myThirdNode = new MyNode<Integer>(40);
+        MyNode<Integer> myFourthNode = new MyNode<>(70);
+        MyLinkedList<Integer> myLinkedList = new MyLinkedList<>();
+        myLinkedList.append(myFirstNode);
+        myLinkedList.append(mySecondNode);
+        myLinkedList.append(myThirdNode);
+        myLinkedList.append(myFourthNode);
+        myLinkedList.popElement(40);
+        int size = myLinkedList.size();
+        Assert.assertEquals(3,size);
     }
 }
