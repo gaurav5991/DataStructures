@@ -14,7 +14,7 @@ public class MyStackTest {
         myStack.push(myFirstNode);
         myStack.push(mySecondNode);
         myStack.push(myThirdNode);
-        INode LastElement = myStack.peak();
+        INode LastElement = myStack.peek();
         myStack.printStack();
         Assert.assertEquals(myThirdNode, LastElement);
     }

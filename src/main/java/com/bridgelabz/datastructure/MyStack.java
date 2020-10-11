@@ -15,7 +15,7 @@ public class MyStack<K extends Comparable<K>> {
     }
 
     /*Peek Element From Stack*/
-    public INode<K> peak() {
+    public INode<K> peek() {
         return MyLinkedList.getHead();
     }
 
