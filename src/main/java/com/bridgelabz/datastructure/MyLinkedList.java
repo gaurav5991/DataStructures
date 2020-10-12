@@ -50,7 +50,7 @@ public class MyLinkedList<K extends Comparable<K>> {
             while (tail.getNext() != null) {
                 tail = tail.getNext();
             }
-            tail.setNext(newNode);
+            this.tail.setNext(newNode);
             this.tail = newNode;
         }
     }
@@ -83,13 +83,13 @@ public class MyLinkedList<K extends Comparable<K>> {
     /*Search element in linked list with given value*/
     public INode<K> searchElement(K key) {
         INode<K> tempNode = head;
-        while (tempNode.getNext() != null) {
+        while (tempNode != null) {
             if (tempNode.getKey().equals(key)) {
                 return tempNode;
             }
             tempNode = tempNode.getNext();
         }
-        return tempNode;
+        return null;
     }
 
     /*Delete Specified Element From Linked List After given Element*/
@@ -145,5 +145,10 @@ public class MyLinkedList<K extends Comparable<K>> {
             tempNode = tempNode.getNext();
         }
         System.out.println();
+    }
+
+    @Override
+    public String toString() {
+        return "MyLinkedList{" + head + '}';
     }
 }
